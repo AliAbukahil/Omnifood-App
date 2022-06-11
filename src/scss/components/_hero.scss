@@ -1,0 +1,23 @@
+.section-hero {
+  background-color: $color-tints;
+  padding: 9.6rem 0;
+
+  &__hero {
+    max-width: 130rem;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 9.6rem;
+    align-items: center;
+  }
+
+  &__hero-description {
+    font-size: 2rem;
+    line-height: 1.6;
+    margin-bottom: 4.8rem;
+  }
+
+  &__hero-img {
+    width: 100%;
+  }
+}

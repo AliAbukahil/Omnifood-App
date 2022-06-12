@@ -9,12 +9,14 @@
 
 //Layout
 @import "layout/footer";
+@import "layout/grid";
 @import "layout/header";
 @import "layout/navigation";
 
 //Components
 @import "components/button";
 @import "components/card";
+@import "components/composition";
 @import "components/feature-box";
 @import "components/hero";
 

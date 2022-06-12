@@ -1,3 +1,42 @@
 .main-nav {
   font-size: 2.4rem;
+
+  &--list {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 3.2rem;
+  }
+
+  &--link:link,
+  &--link:visited {
+    display: inline-block;
+    text-decoration: none;
+    color: $color-grey-light-2;
+    font-weight: 500;
+    font-size: 1.8rem;
+
+    /* we use the transition property in order to create
+    animation between deferent values for a certain property */
+    transition: all 0.3s;
+  }
+
+  &--link:hover,
+  &--link:active {
+    color: $color-secondary;
+  }
+
+  &--cta-btn:link,
+  &--cta-btn:visited {
+    padding: 1.2rem 2.4rem;
+    border-radius: 9px;
+    color: $white;
+    background-color: $color-primary;
+  }
+
+  /* cta ––> call to action */
+  &--cta-btn:hover,
+  &--cta-btn:active {
+    background-color: $color-secondary;
+  }
 }

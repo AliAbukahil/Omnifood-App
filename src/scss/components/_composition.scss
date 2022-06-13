@@ -1,7 +1,60 @@
 ///////////////////////////////
 
+.step-text-box {
+  &__step-number {
+    font-size: 8.6rem;
+    font-weight: 600;
+    color: #ddd;
+    margin-bottom: 1.2rem;
+  }
+  &__step-description {
+    font-size: 1.8rem;
+    line-height: 1.8;
+  }
+}
+
+/* Related to Circles */
+.step-img-box::before,
+.step-img-box::after {
+  content: "";
+  display: block;
+  background-color: $color-tints;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  /* transform: translate(X Axis, Y Axis); */
+  transform: translate(-50%, -50%);
+}
+
+/* Big Circle behind phone */
+.step-img-box::before {
+  width: 60%;
+  /* height: 60%; */ // this won't work out, there is a trick to give the same height
+
+  /* 60% of parent's width */
+  padding-bottom: 60%;
+
+  z-index: -2;
+}
+
+/*  Small Circle behind phone */
+.step-img-box::after {
+  width: 45%;
+  padding-bottom: 50%;
+  background-color: $color-tints-2;
+  z-index: -1;
+}
+
 .step-img-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  // for ::before property
+  position: relative;
+
   &__step-img {
-    width: 50%;
+    width: 35%;
   }
 }

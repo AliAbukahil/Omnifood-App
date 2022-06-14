@@ -181,30 +181,72 @@
         </div>
 
         <div class="container grid grid--3-cols">
+          <!-- Meal Card 1 -->
           <div class="meal">
             <img
               src="img/meals/meal-1.jpg"
               class="meal__img"
               alt="Japanese Gyozas"
             />
-            <span class="tag">Vegetarian</span>
-            <p class="meal__title">Japanese Gyozas</p>
-            <ul class="meal__attributes">
-              <li class="meal__attribute">
-                <ion-icon name="flame-outline"></ion-icon
-                ><span>650 Calories</span>
-              </li>
-              <li class="meal__attribute">
-                <ion-icon name="restaurant-outline"></ion-icon
-                ><span>NutriScore &reg; 74</span>
-              </li>
-              <li class="meal__attribute">
-                <ion-icon name="star-outline"></ion-icon
-                ><span>4.9 rating (537)</span>
-              </li>
-            </ul>
+            <div class="meal__content">
+              <div class="meal__tags">
+                <span class="meal__tag tag--vegetarian">Vegetarian</span>
+              </div>
+              <p class="meal__title">Japanese Gyozas</p>
+              <ul class="meal__attributes">
+                <li class="meal__attribute">
+                  <ion-icon class="meal__icon" name="flame-outline"></ion-icon
+                  ><span><strong>650</strong> Calories</span>
+                </li>
+                <li class="meal__attribute">
+                  <ion-icon
+                    class="meal__icon"
+                    name="restaurant-outline"
+                  ></ion-icon
+                  ><span>NutriScore &reg; <strong>74</strong></span>
+                </li>
+                <li class="meal__attribute">
+                  <ion-icon class="meal__icon" name="star-outline"></ion-icon
+                  ><span><strong>4.9</strong> rating (537)</span>
+                </li>
+              </ul>
+            </div>
           </div>
-          <div class="meal">Meals</div>
+
+          <!-- Meal Card 2 -->
+          <div class="meal">
+            <img
+              src="img/meals/meal-2.jpg"
+              class="meal__img"
+              alt="Avocado Salad"
+            />
+            <div class="meal__content">
+              <div class="meal__tags">
+                <span class="meal__tag tag--vegan">Vegan</span>
+                <span class="meal__tag tag--paleo">Paleo</span>
+              </div>
+              <p class="meal__title">Avocado Salad</p>
+              <ul class="meal__attributes">
+                <li class="meal__attribute">
+                  <ion-icon class="meal__icon" name="flame-outline"></ion-icon
+                  ><span><strong>400</strong> Calories</span>
+                </li>
+                <li class="meal__attribute">
+                  <ion-icon
+                    class="meal__icon"
+                    name="restaurant-outline"
+                  ></ion-icon
+                  ><span>NutriScore &reg; <strong>92</strong></span>
+                </li>
+                <li class="meal__attribute">
+                  <ion-icon class="meal__icon" name="star-outline"></ion-icon
+                  ><span><strong>4.8</strong> rating (441)</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Meal Card 3 -->
           <div class="list">List of</div>
         </div>
       </section>

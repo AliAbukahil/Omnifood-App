@@ -1,10 +1,18 @@
 .section-testimonials {
-  padding: 9.6rem 0;
+  background-color: $color-tints;
+  display: grid;
+  grid-template-columns: 55fr 45fr;
+  align-items: center;
+
+  &__container {
+    padding: 9.6rem;
+  }
 
   &__testimonials {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 4.8rem;
+    row-gap: 4.8rem;
+    column-gap: 8rem;
   }
 
   &__testimonial {
@@ -26,7 +34,25 @@
     font-size: 1.6rem;
     color: #777;
   }
+}
 
-  &__gallery {
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.6rem;
+  padding: 1.6rem;
+
+  &__item {
+    overflow: hidden;
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    transition: all 0.4s;
+  }
+
+  img:hover {
+    transform: scale(1.1);
   }
 }

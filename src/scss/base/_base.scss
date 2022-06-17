@@ -6,6 +6,12 @@
   box-sizing: inherit;
 }
 
+/* When you move with tab button on the keyboard, Important for accessibility  */
+*:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.8rem rgba(230, 125, 34, 0.5);
+}
+
 html {
   /* 10px / 16px = 0.625 = 62.5% */
   /*  Percentage of user's browser font-size settings */

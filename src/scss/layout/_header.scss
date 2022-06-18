@@ -3,6 +3,7 @@
   justify-content: space-between;
   align-items: center;
   background-color: $color-tints;
+  position: relative;
 
   /* why fixed height? cuz we want to set as sticky later  */
   height: 9.6rem;
@@ -15,4 +16,15 @@
   &__logo {
     height: 2.2rem;
   }
+}
+
+/* Mobile Navigation */
+.nav-open .main-nav {
+  /* Setting the four steps back to normal when
+  we open the element  */
+
+  opacity: 1;
+  pointer-events: auto;
+  visibility: visible;
+  transform: translateX(0);
 }

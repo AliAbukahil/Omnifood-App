@@ -16,6 +16,7 @@ html {
   /* 10px / 16px = 0.625 = 62.5% */
   /*  Percentage of user's browser font-size settings */
   font-size: 62.5%;
+  overflow-x: hidden; /* for Mobile Navigation */
 
   @include respond(tab-land) {
     /* 9px / 16px */
@@ -29,4 +30,7 @@ html {
 
 body {
   box-sizing: border-box;
+
+  /* This is only works if there is nothing absolutely positioned to the body */
+  overflow-x: hidden; /* for Mobile Navigation */
 }

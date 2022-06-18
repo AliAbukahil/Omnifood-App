@@ -1,0 +1,39 @@
+.btn-mobile-nav {
+  border: none;
+  background: none;
+  cursor: pointer;
+
+  display: none;
+
+  @include respond(tab-port) {
+    display: block;
+  }
+}
+
+.icon-mobile-nav {
+  font-size: 4.8rem;
+  color: $color-grey-light-2;
+}
+
+/* Selecting attributes of elements */
+.icon-mobile-nav[name="close-outline"] {
+  display: none;
+}
+
+/* Selecting attributes of elements */
+.nav-open .icon-mobile-nav[name="close-outline"] {
+  display: none;
+
+  @include respond(tab-port) {
+    /* this will show the icon when the .nav-open is presented */
+    display: block;
+  }
+}
+
+/* Selecting attributes of elements */
+.nav-open .icon-mobile-nav[name="menu-outline"] {
+  @include respond(tab-port) {
+    /* this will hide the menu icon when the .nav-open is presented */
+    display: none;
+  }
+}

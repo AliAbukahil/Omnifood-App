@@ -10,6 +10,14 @@
     grid-template-columns: 1fr 1fr;
     gap: 9.6rem;
     align-items: center;
+
+    @include respond(small-desktop) {
+      max-width: 120rem;
+    }
+
+    @include respond(tab-land) {
+      gap: 4.8rem;
+    }
   }
 
   &__hero-description {

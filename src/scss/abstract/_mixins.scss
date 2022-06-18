@@ -1,5 +1,13 @@
 // Media Query Manager
 
+/*  rem and em do NOT depend on html font-size in media queries! Instead. 1rem = 1em = 16px */
+
+// rem === the root font-size
+// em  === basically means the current font-size
+
+/* 
+Why we use em instead of rem in media Queries, because REM has some bugs in some browsers when used in media queries and therefore we should not use REM in media queries but EM instead */
+
 /* 
 0 => 600px: phone
 600 - 900X: Tablet portrait
@@ -33,6 +41,15 @@ $breakpoints argument choices:
   @if $breakpoints == tab-land {
     @media only screen and (max-width: 75em) {
       // 1200px / 16px  = 75em
+      @content;
+    }
+  }
+
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+  @if $breakpoints == small-desktop {
+    @media only screen and (max-width: 84rem) {
+      // 1344px / 16 = 84em
       @content;
     }
   }

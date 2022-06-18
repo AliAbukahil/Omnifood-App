@@ -16,6 +16,11 @@ html {
   /* 10px / 16px = 0.625 = 62.5% */
   /*  Percentage of user's browser font-size settings */
   font-size: 62.5%;
+
+  @include respond(tab-land) {
+    /* 9px / 16px */
+    font-size: 56.25%;
+  }
 }
 
 body {

@@ -6,6 +6,10 @@
 
   &__container {
     padding: 9.6rem;
+
+    @include respond(tab-land) {
+      padding: 9.6rem 3.2rem;
+    }
   }
 
   &__testimonials {
@@ -41,6 +45,10 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 1.6rem;
   padding: 1.6rem;
+
+  @include respond(small-desktop) {
+    grid-template-columns: repeat(2, 1fr);
+  }
 
   &__item {
     overflow: hidden;

@@ -1,5 +1,9 @@
 .section-cta {
-  padding: 9.6rem 0;
+  /* Top / right / bottom / left */
+  /* padding: 9.6rem 0 12.8rem 0; */
+
+  // Three values ––> /* top / horizontal / bottom */
+  padding: 4.8rem 0 12.8rem;
 
   &__cta-text-box {
     padding: 4.8rem 6.4rem 6.4rem 6.4rem;

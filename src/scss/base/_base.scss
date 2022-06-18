@@ -21,6 +21,10 @@ html {
     /* 9px / 16px */
     font-size: 56.25%;
   }
+
+  @include respond(tab-port) {
+    font-size: 50%;
+  }
 }
 
 body {

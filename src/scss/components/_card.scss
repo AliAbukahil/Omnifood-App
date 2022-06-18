@@ -15,6 +15,10 @@
 
   &__content {
     padding: 3.2rem 4.8rem 4.8rem 4.8rem;
+
+    @include respond(tab-port) {
+      padding: 2.4rem 3.2rem 3.2rem 3.2rem;
+    }
   }
 
   &__tags {
@@ -79,30 +83,6 @@
 .tag--paleo {
   background-color: $color-paleo;
 }
-
-/* Meals Card LIST  */
-/*
-.diets {
-  &__list {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    row-gap: 1.6rem;
-  }
-
-  &__item {
-    font-size: 1.8rem;
-    display: flex;
-    align-items: center;
-    gap: 1.6rem;
-  }
-
-  &__icon {
-    font-size: 3rem;
-    color: #e67e22;
-  }
-}
-*/
 
 /* Link styles after cards */
 

@@ -18,6 +18,19 @@
     @include respond(tab-land) {
       gap: 4.8rem;
     }
+
+    @include respond(tab-port) {
+      grid-template-columns: 1fr;
+      padding: 0 8rem;
+      gap: 6.4rem;
+    }
+  }
+
+  &__hero-text-box,
+  &__hero-image-box {
+    @include respond(tab-port) {
+      text-align: center;
+    }
   }
 
   &__hero-description {
@@ -28,6 +41,10 @@
 
   &__hero-img {
     width: 100%;
+
+    @include respond(tab-port) {
+      width: 60%;
+    }
   }
 }
 
@@ -36,6 +53,11 @@
   align-items: center;
   gap: 1.6rem;
   margin-top: 8rem;
+
+  @include respond(tab-port) {
+    justify-content: center;
+    margin-top: 3.2rem;
+  }
 
   &--imgs {
     display: flex;

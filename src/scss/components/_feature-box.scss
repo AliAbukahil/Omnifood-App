@@ -21,5 +21,9 @@
     height: 3.2rem;
     filter: brightness(0); /* To change the color of an image */
     opacity: 50%; /* the opacity will give a the img a gray color */
+
+    @include respond(tab-port) {
+      height: 2.4rem;
+    }
   }
 }

@@ -6,7 +6,12 @@
     font-weight: 600;
     color: #ddd;
     margin-bottom: 1.2rem;
+
+    @include respond(tab-port) {
+      font-size: 7.4rem;
+    }
   }
+
   &__step-description {
     font-size: 1.8rem;
     line-height: 1.8;

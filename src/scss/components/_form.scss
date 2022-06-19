@@ -8,6 +8,10 @@
   &__cta-text-box {
     padding: 4.8rem 6.4rem 6.4rem 6.4rem;
     color: $color-dark;
+
+    @include respond(small-phone) {
+      padding: 3.2rem;
+    }
   }
 
   &__cta-img-box {
@@ -19,6 +23,11 @@
       url("../../img/eating.jpg");
     background-size: cover;
     background-position: center;
+
+    @include respond(small-phone) {
+      height: 32rem;
+      grid-row: 1;
+    }
   }
 }
 
@@ -41,6 +50,10 @@
   @include respond(tab-port) {
     /* 3/5  = 60% + 2/5 = 40%*/
     grid-template-columns: 3fr 2fr;
+  }
+
+  @include respond(small-phone) {
+    grid-template-columns: 1fr;
   }
 
   h2 {

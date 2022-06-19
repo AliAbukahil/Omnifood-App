@@ -24,6 +24,15 @@ $breakpoints argument choices:
 // 1em === 16px
 
 @mixin respond($breakpoints) {
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+  @if $breakpoints == small-phone {
+    @media only screen and (max-width: 34em) {
+      // 544px / 16px = 34em
+      @content;
+    }
+  }
+
   @if $breakpoints == phone {
     @media only screen and (max-width: 37.5em) {
       // 600px / 16px = 37.5em
@@ -42,7 +51,7 @@ $breakpoints argument choices:
 
   @if $breakpoints == tab-port {
     @media only screen and (max-width: 56.25em) {
-      // 900 / 16px = 56.25
+      // 900px / 16px = 56.25
       @content;
     }
   }

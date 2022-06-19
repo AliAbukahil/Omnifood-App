@@ -10,17 +10,16 @@
   /* this property trick will center the container on the page */
   margin: 0 auto;
   padding: 0 3.2rem;
-
-  /*   @include respond(phone) {
-    max-width: 40rem;
-    padding: 0;
-  } */
 }
 
 .grid {
   display: grid;
   column-gap: 6.4rem;
   row-gap: 9.6rem;
+
+  @include respond(small-phone) {
+    row-gap: 4.8rem;
+  }
 
   @include respond(tab-land) {
     column-gap: 4.8rem;
@@ -34,6 +33,10 @@
 
 .grid--2-cols {
   grid-template-columns: repeat(2, 1fr);
+
+  @include respond(small-phone) {
+    grid-template-columns: 1fr;
+  }
 }
 
 .grid--3-cols {
@@ -42,6 +45,10 @@
   @include respond(small-tablet) {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  @include respond(small-phone) {
+    grid-template-columns: 1fr;
+  }
 }
 
 .grid--4-cols {
@@ -49,6 +56,10 @@
 
   @include respond(small-tablet) {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include respond(small-phone) {
+    grid-template-columns: 1fr;
   }
 }
 

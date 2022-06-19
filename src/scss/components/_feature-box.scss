@@ -25,5 +25,9 @@
     @include respond(tab-port) {
       height: 2.4rem;
     }
+
+    @include respond(small-phone) {
+      height: 1.2rem;
+    }
   }
 }

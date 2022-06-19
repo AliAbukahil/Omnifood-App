@@ -18,6 +18,18 @@
   }
 }
 
+.step-img-box:nth-child(2) {
+  @include respond(small-phone) {
+    grid-row: 1;
+  }
+}
+
+.step-img-box:nth-child(6) {
+  @include respond(small-phone) {
+    grid-row: 5;
+  }
+}
+
 /* Related to Circles */
 .step-img-box::before,
 .step-img-box::after {
@@ -58,6 +70,10 @@
 
   // for ::before property
   position: relative;
+
+  @include respond(small-phone) {
+    transform: translateY(2.4rem);
+  }
 
   &__step-img {
     width: 35%;

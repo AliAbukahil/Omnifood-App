@@ -64,6 +64,13 @@
   }
 }
 
+.diets {
+  @include respond(small-tablet) {
+    grid-column: 1 / -1;
+    justify-self: center;
+  }
+}
+
 /* two cards Animation */
 .meal:hover {
   /* transform: translate(X axis, Y axis); */

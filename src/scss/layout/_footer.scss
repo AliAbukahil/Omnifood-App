@@ -1,5 +1,9 @@
 .grid--footer {
   grid-template-columns: 1.5fr 1.5fr 1fr 1fr 1fr;
+
+  @include respond(small-tablet) {
+    grid-template-columns: repeat(6, 1fr);
+  }
 }
 
 .footer {
@@ -9,6 +13,10 @@
   &__logo-col {
     display: flex;
     flex-direction: column;
+
+    @include respond(small-tablet) {
+      grid-column: span 3;
+    }
   }
 
   &__logo {
@@ -34,6 +42,9 @@
   }
 
   &__address-col {
+    @include respond(small-tablet) {
+      grid-column: span 3;
+    }
   }
 
   &__address {
@@ -53,6 +64,11 @@
   }
 
   &__nav-col {
+    @include respond(small-tablet) {
+      grid-row: 1 /-1;
+      grid-column: span 2;
+      margin-bottom: 3.2rem;
+    }
   }
 
   &__nav {

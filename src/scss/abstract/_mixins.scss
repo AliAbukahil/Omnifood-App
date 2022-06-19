@@ -31,6 +31,15 @@ $breakpoints argument choices:
     }
   }
 
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+  @if $breakpoints == small-tablet {
+    @media only screen and (max-width: 44em) {
+      // 704px / 16px = 44em
+      @content;
+    }
+  }
+
   @if $breakpoints == tab-port {
     @media only screen and (max-width: 56.25em) {
       // 900 / 16px = 56.25

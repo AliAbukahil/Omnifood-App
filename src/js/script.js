@@ -57,6 +57,33 @@ allLinks.forEach(function (link) {
   });
 });
 
+/////////////////////////////////////////////////////////
+// Implementing Sticky Navigation Bar
+
+const sectionHeroEl = document.querySelector(".section-hero");
+
+const observer = new IntersectionObserver(
+  function (entries) {
+    const entry = entries[0];
+    console.log(entry);
+
+    if (entry.isIntersecting === false) {
+      document.body.classList.add("sticky");
+    }
+
+    if (entry.isIntersecting) {
+      document.body.classList.remove("sticky");
+    }
+  },
+  {
+    // obsereing the root inside the viewport
+    root: null,
+    threshold: 0,
+    rootMargin: "-80px",
+  }
+);
+observer.observe(sectionHeroEl);
+
 ///////////////////////////////////////////////////////////
 // Fixing flexbox gap property missing in some Safari versions
 function checkFlexGap() {
@@ -77,6 +104,7 @@ function checkFlexGap() {
 }
 checkFlexGap();
 
+/* Script for smooth scrolling */
 // https://unpkg.com/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js
 
 /*

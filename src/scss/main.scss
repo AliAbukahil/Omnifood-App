@@ -1,20 +1,21 @@
-//Abstract
+// Abstract
 @import "abstract/variables";
 @import "abstract/mixins";
 
-//Base
+// Base
 @import "base/base";
 @import "base/typography";
 @import "base/utilities";
 
-//Layout
+// Layout
 @import "layout/footer";
 @import "layout/grid";
 @import "layout/header";
 @import "layout/mobile-navigation";
 @import "layout/navigation";
+@import "layout/sticky-navigation";
 
-//Components
+// Components
 @import "components/button";
 @import "components/card";
 @import "components/composition";

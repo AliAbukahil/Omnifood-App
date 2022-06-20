@@ -18,6 +18,11 @@ html {
   font-size: 62.5%;
   overflow-x: hidden; /* for Mobile Navigation */
 
+  /*Implementing Smooth Scrolling,but
+  does not work on Safari browser*/
+
+  /* scroll-behavior: smooth; */
+
   @include respond(tab-land) {
     /* 9px / 16px */
     font-size: 56.25%;

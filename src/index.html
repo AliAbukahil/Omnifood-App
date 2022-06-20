@@ -28,12 +28,14 @@
       </a>
       <nav class="main-nav">
         <ul class="main-nav--list">
-          <li><a class="main-nav--link" href="#">How it works</a></li>
-          <li><a class="main-nav--link" href="#">meals</a></li>
-          <li><a class="main-nav--link" href="#">Testimonials</a></li>
-          <li><a class="main-nav--link" href="#">Pricing</a></li>
+          <li><a class="main-nav--link" href="#how">How it works</a></li>
+          <li><a class="main-nav--link" href="#meal">meals</a></li>
           <li>
-            <a class="main-nav--link main-nav--cta-btn" href="#"
+            <a class="main-nav--link" href="#testimonials">Testimonials</a>
+          </li>
+          <li><a class="main-nav--link" href="#pricing">Pricing</a></li>
+          <li>
+            <a class="main-nav--link main-nav--cta-btn" href="#cta"
               >Try for free</a
             >
           </li>
@@ -61,10 +63,10 @@
             </p>
             <!-- Why link/a not a button? because links are for going somewhere on the page
         or other pages while a button element should only be used for action, so something happens that is not related for navigation, like subscribing or paying using paypal for example-->
-            <a href="#" class="btn btn--full margin-right-sm"
+            <a href="#cta" class="btn btn--full margin-right-sm"
               >Start eating well</a
             >
-            <a href="#" class="btn btn--outline">Learn more &darr;</a>
+            <a href="#how" class="btn btn--outline">Learn more &darr;</a>
             <div class="delivered__meals">
               <div class="delivered__meals--imgs">
                 <img src="img/customers/customer-1.jpg" alt="Customer photo" />
@@ -110,7 +112,7 @@
       </section>
 
       <!-- Section How It Works-->
-      <section class="section__how">
+      <section class="section__how" id="how">
         <div class="container">
           <div class="container">
             <span class="subheading">How it works</span>
@@ -184,7 +186,7 @@
       </section>
 
       <!-- Meals Section -->
-      <section class="section-meals">
+      <section class="section-meals" id="meal">
         <div class="container center-text">
           <span class="subheading">Meals</span>
           <h2 class="heading-secondary">
@@ -336,7 +338,7 @@
       </section>
 
       <!-- Testimonials Section -->
-      <section class="section-testimonials">
+      <section class="section-testimonials" id="testimonials">
         <div class="section-testimonials__container">
           <span class="subheading">Testimonials</span>
           <h2 class="heading-secondary">Once you try it, you can't go back</h2>
@@ -484,7 +486,7 @@
         </div>
       </section>
 
-      <section class="section-pricing">
+      <section class="section-pricing" id="pricing">
         <div class="container">
           <span class="subheading">Pricing</span>
           <h2 class="heading-secondary">
@@ -624,7 +626,7 @@
       </section>
 
       <!-- Call To Action Section With form -->
-      <section class="section-cta">
+      <section class="section-cta" id="cta">
         <div class="container">
           <div class="cta">
             <div class="section-cta__cta-text-box">
@@ -814,6 +816,12 @@
     <script
       nomodule
       src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+
+    <!-- Script for smooth scrolling -->
+    <script
+      defer
+      src="https://unpkg.com/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js"
     ></script>
 
     <script defer src="./js/script.js"></script>

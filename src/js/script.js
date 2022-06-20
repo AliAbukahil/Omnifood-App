@@ -1,9 +1,9 @@
-console.log("Hello World!!!");
+//console.log("Hello World!!!");
 
 const myName = "Ali Abukahil";
 const h1 = document.querySelector(".heading-primary");
-console.log(myName);
-console.log(h1);
+// console.log(myName);
+// console.log(h1);
 
 /* 
 h1.addEventListener("click", () => {
@@ -26,10 +26,41 @@ btnNavEl.addEventListener("click", function () {
   headerEl.classList.toggle("nav-open");
 });
 
+/////////////////////////////////////////////////////////
+// Smooth Scrolling Animation
+const allLinks = document.querySelectorAll("a:link");
+allLinks.forEach(function (link) {
+  link.addEventListener("click", function (e) {
+    e.preventDefault();
+    const href = link.getAttribute("href");
+
+    //  Scroll back to top
+    if (href === "#")
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+
+    // Scroll to other links
+    /* herf is different than # and ..... */
+    if (href !== "#" && href.startsWith("#")) {
+      const sectionEl = document.querySelector(href);
+      sectionEl.scrollIntoView({
+        behavior: "smooth",
+      });
+    }
+
+    // close Mobile navigation
+    if (link.classList.contains("main-nav--link")) {
+      headerEl.classList.toggle("nav-open");
+    }
+  });
+});
+
 ///////////////////////////////////////////////////////////
 // Fixing flexbox gap property missing in some Safari versions
 function checkFlexGap() {
-  const flex = document.createElement("div");
+  var flex = document.createElement("div");
   flex.style.display = "flex";
   flex.style.flexDirection = "column";
   flex.style.rowGap = "1px";

@@ -1,0 +1,1548 @@
+@charset "UTF-8";
+/*  rem and em do NOT depend on html font-size in media queries! Instead. 1rem = 1em = 16px */
+/* 
+Why we use em instead of rem in media Queries, because REM has some bugs in some browsers when used in media queries and therefore we should not use REM in media queries but EM instead */
+/* 
+0 => 600px: phone
+600 - 900X: Tablet portrait
+900 - 1200X: Tablet landscape
+[1200 - 1800]  is where our normal style apply
+1800px + :   Big Desktop
+$breakpoints argument choices: 
+=> phone
+=> tab-port === InCaseYou'reConfusedItMeans => Tablet portrait
+=> tab-land === InCaseYou'reConfusedItMeans => Tablet landscape
+=> big-desktop
+*/
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+/* When you move with tab button on the keyboard, Important for accessibility  */
+*:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.8rem rgba(230, 125, 34, 0.5);
+}
+
+html {
+  /* 10px / 16px = 0.625 = 62.5% */
+  /*  Percentage of user's browser font-size settings */
+  font-size: 62.5%;
+  overflow-x: hidden; /* for Mobile Navigation */
+  /*Implementing Smooth Scrolling,but
+  does not work on Safari browser*/
+  /* scroll-behavior: smooth; */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+}
+@media only screen and (max-width: 75em) {
+  html {
+    /* 9px / 16px */
+    font-size: 56.25%;
+  }
+}
+@media only screen and (max-width: 56.25em) {
+  html {
+    font-size: 50%;
+  }
+}
+
+body {
+  box-sizing: border-box;
+  /* This is only works if there is nothing absolutely positioned to the body */
+  overflow-x: hidden; /* for Mobile Navigation */
+}
+
+body {
+  font-family: "Rubik", sans-serif;
+  line-height: 1;
+  font-weight: 400;
+  color: #555;
+}
+
+.heading-primary,
+.heading-secondary,
+.heading-tertiary {
+  font-weight: 700;
+  color: #333;
+  letter-spacing: -0.5px;
+}
+
+.heading-primary {
+  font-size: 5.2rem;
+  line-height: 1.05;
+  margin-bottom: 3.2rem;
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+}
+@media only screen and (max-width: 84rem) {
+  .heading-primary {
+    font-size: 4.4rem;
+  }
+}
+
+.heading-secondary {
+  font-size: 4.4rem;
+  line-height: 1.2;
+  margin-bottom: 9.6rem;
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+}
+@media only screen and (max-width: 44em) {
+  .heading-secondary {
+    margin-bottom: 4.8rem;
+  }
+}
+@media only screen and (max-width: 75em) {
+  .heading-secondary {
+    font-size: 3.6rem;
+  }
+}
+
+.heading-tertiary {
+  font-size: 2.9rem;
+  line-height: 1.2;
+  margin-bottom: 3.2rem;
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+}
+@media only screen and (max-width: 75em) {
+  .heading-tertiary {
+    font-size: 2.4rem;
+  }
+}
+
+.subheading {
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: #cf711f;
+  text-transform: uppercase;
+  margin-bottom: 1.6rem;
+  letter-spacing: 0.75px;
+}
+
+/* Reuseable Code */
+.link:link,
+.link:visited {
+  display: inline-block;
+  color: #e67e22;
+  text-decoration: none;
+  border-bottom: 1px solid currentColor; /* currentColor means taking the color value */
+  padding-bottom: 0.4rem;
+  transition: all 0.3s;
+}
+
+.link:hover,
+.link:active {
+  color: #cf711f;
+  border-bottom: 1px solid transparent; /* if you say border-bottom none this will make the jumps up and down 1px as we hover the link that is why it is better to keep it and make it transparent */
+}
+
+.lists {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.6rem;
+}
+.lists__item {
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+  line-height: 1.2;
+}
+.lists__icon {
+  font-size: 3rem;
+  color: #e67e22;
+}
+
+/* helper / Settings classes  */
+.margin-right-sm {
+  margin-right: 1.6rem !important;
+}
+
+.margin-bottom-md {
+  margin-bottom: 4.8rem !important;
+}
+
+strong {
+  font-weight: 500;
+}
+
+.center-text {
+  text-align: center;
+}
+
+.grid--footer {
+  grid-template-columns: 1.5fr 1.5fr 1fr 1fr 1fr;
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+}
+@media only screen and (max-width: 44em) {
+  .grid--footer {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+.footer {
+  padding: 12.8rem 0;
+  border-top: 1px solid #eee;
+}
+.footer__logo-col {
+  display: flex;
+  flex-direction: column;
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+}
+@media only screen and (max-width: 44em) {
+  .footer__logo-col {
+    grid-column: span 3;
+  }
+}
+.footer__logo {
+  display: block;
+  margin-bottom: 3.2rem;
+}
+.footer__social-links {
+  list-style: none;
+  display: flex;
+  gap: 2.4rem;
+}
+.footer__social-icons {
+  font-size: 2.4rem;
+}
+.footer__copyright {
+  font-size: 1.4rem;
+  line-height: 1.6;
+  color: #767676;
+  margin-top: auto;
+}
+.footer__address-col {
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+}
+@media only screen and (max-width: 44em) {
+  .footer__address-col {
+    grid-column: span 3;
+  }
+}
+.footer__address {
+  margin-bottom: 2.4rem;
+}
+.footer__heading {
+  font-size: 1.8rem;
+  font-weight: 500;
+  margin-bottom: 4rem;
+}
+.footer__contacts {
+  font-style: normal;
+  font-size: 1.6rem;
+  line-height: 1.6;
+}
+.footer__nav-col {
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+}
+@media only screen and (max-width: 44em) {
+  .footer__nav-col {
+    grid-row: 1/-1;
+    grid-column: span 2;
+    margin-bottom: 3.2rem;
+  }
+}
+.footer__nav {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  row-gap: 2.4rem;
+}
+.footer__link:link, .footer__link:visited {
+  text-decoration: none;
+  font-size: 1.6rem;
+  color: #767676;
+  transition: all 0.3s;
+}
+.footer__link:hover, .footer__link:active {
+  color: #555;
+}
+
+.section__how {
+  padding: 9.6rem 0;
+}
+
+/* Reuseable Code everywhere */
+.container {
+  /* This width is kind of standard among developers
+  and another one is 1140px === 114rem */
+  max-width: 120rem;
+  /* this property trick will center the container on the page */
+  margin: 0 auto;
+  padding: 0 3.2rem;
+}
+
+.grid {
+  display: grid;
+  column-gap: 6.4rem;
+  row-gap: 9.6rem;
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+}
+@media only screen and (max-width: 34em) {
+  .grid {
+    row-gap: 4.8rem;
+  }
+}
+@media only screen and (max-width: 75em) {
+  .grid {
+    column-gap: 4.8rem;
+    row-gap: 6.4rem;
+  }
+}
+
+.grid:not(:last-child) {
+  margin-bottom: 9.6rem;
+}
+
+.grid--2-cols {
+  grid-template-columns: repeat(2, 1fr);
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+}
+@media only screen and (max-width: 34em) {
+  .grid--2-cols {
+    grid-template-columns: 1fr;
+  }
+}
+
+.grid--3-cols {
+  grid-template-columns: repeat(3, 1fr);
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+}
+@media only screen and (max-width: 44em) {
+  .grid--3-cols {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media only screen and (max-width: 34em) {
+  .grid--3-cols {
+    grid-template-columns: 1fr;
+  }
+}
+
+.grid--4-cols {
+  grid-template-columns: repeat(4, 1fr);
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+}
+@media only screen and (max-width: 44em) {
+  .grid--4-cols {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media only screen and (max-width: 34em) {
+  .grid--4-cols {
+    grid-template-columns: 1fr;
+  }
+}
+
+.grid--5-cols {
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.grid--center-v {
+  align-items: center;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fdf2e9;
+  position: relative;
+  /* why fixed height? cuz we want to set as sticky later  */
+  height: 9.6rem;
+  padding: 0 4.8rem;
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+}
+@media only screen and (max-width: 75em) {
+  .header {
+    padding: 0 3.2rem;
+  }
+}
+.header__logo {
+  height: 2.2rem;
+}
+
+/* Mobile Navigation */
+.nav-open .main-nav {
+  /* Setting the four steps back to normal when
+  we open the element  */
+  opacity: 1;
+  pointer-events: auto;
+  visibility: visible;
+  transform: translateX(0);
+}
+
+.btn-mobile-nav {
+  border: none;
+  background: none;
+  cursor: pointer;
+  display: none;
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+}
+@media only screen and (max-width: 56.25em) {
+  .btn-mobile-nav {
+    display: block;
+    z-index: 9999;
+  }
+}
+
+.icon-mobile-nav {
+  font-size: 4.8rem;
+  color: #333;
+}
+
+/* Selecting attributes of elements */
+.icon-mobile-nav[name=close-outline] {
+  display: none;
+}
+
+/* Selecting attributes of elements */
+.nav-open .icon-mobile-nav[name=close-outline] {
+  display: none;
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+}
+@media only screen and (max-width: 56.25em) {
+  .nav-open .icon-mobile-nav[name=close-outline] {
+    /* this will show the icon when the .nav-open is presented */
+    display: block;
+  }
+}
+
+/* Selecting attributes of elements */
+.nav-open .icon-mobile-nav[name=menu-outline] {
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+}
+@media only screen and (max-width: 56.25em) {
+  .nav-open .icon-mobile-nav[name=menu-outline] {
+    /* this will hide the menu icon when the .nav-open is presented */
+    display: none;
+  }
+}
+
+.main-nav {
+  font-size: 2.4rem;
+  /* Mobile Navigation */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+  /* cta ––> call to action */
+}
+@media only screen and (max-width: 56.25em) {
+  .main-nav {
+    background-color: rgba(255, 255, 255, 0.8);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(10px);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh; /* this will expand top to bottom */
+    transform: translateX(100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Animation */
+    /* transition: 1st which property we want to animate, 2ed Duration, 3rd  type of animation ; */
+    transition: all 0.5s ease-in;
+    /* the 3 correct steps way of hiding an element on the page 
+     without using display:none;  */
+    /* Hide Navigation */
+    /*  1) Hide it visually */
+    opacity: 0;
+    /* 2) Make it unaccessible to mouse and keyboard */
+    pointer-events: none;
+    /* 3) Hide it from screen readers */
+    visibility: hidden;
+  }
+}
+.main-nav--list {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 4.8rem;
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+  /* Mobile Navigation */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+}
+@media only screen and (max-width: 75em) {
+  .main-nav--list {
+    gap: 3.2rem;
+  }
+}
+@media only screen and (max-width: 56.25em) {
+  .main-nav--list {
+    flex-direction: column;
+    gap: 4.8rem;
+  }
+}
+.main-nav--link:link, .main-nav--link:visited {
+  display: inline-block;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  font-size: 1.8rem;
+  /* we use the transition property in order to create
+  animation between deferent values for a certain property */
+  transition: all 0.3s;
+  /* Mobile Navigation */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+}
+@media only screen and (max-width: 56.25em) {
+  .main-nav--link:link, .main-nav--link:visited {
+    font-size: 3rem;
+  }
+}
+.main-nav--link:hover, .main-nav--link:active {
+  color: #cf711f;
+}
+.main-nav--cta-btn:link, .main-nav--cta-btn:visited {
+  padding: 1.2rem 2.4rem;
+  border-radius: 9px;
+  color: #fff;
+  background-color: #e67e22;
+}
+.main-nav--cta-btn:hover, .main-nav--cta-btn:active {
+  background-color: #cf711f;
+}
+
+.sticky .header {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 8rem; /* fixed height */
+  padding-top: 0;
+  padding-bottom: 0;
+  background-color: rgba(255, 255, 255, 0.97);
+  z-index: 999;
+  /* 0H  1.2V blur3.2rem */
+  box-shadow: 0 1.2rem 3.2rem rgba(0, 0, 0, 0.03);
+}
+
+/* adding margin to section hero after the sticky nav bar kicks off */
+.sticky .section-hero {
+  margin-top: 9.6rem;
+}
+
+.btn, .btn:link, .btn:visited {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  font-weight: 600;
+  padding: 1.6rem 3.2rem;
+  border-radius: 9px;
+  border: none;
+  cursor: pointer;
+  /* transition animation always on original "state" */
+  /* transition: background-color 0.3s; */
+  transition: all 0.3s;
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+}
+@media only screen and (max-width: 34em) {
+  .btn, .btn:link, .btn:visited {
+    padding: 2.4rem 1.6rem;
+  }
+}
+.btn--full:link, .btn--full:visited {
+  background-color: #e67e22;
+  color: #fff;
+}
+.btn--full:hover, .btn--full:active {
+  background-color: #cf711f;
+}
+.btn--outline:link, .btn--outline:visited {
+  background-color: #fff;
+  color: #555;
+  /* border: 3px solid #fff; */
+  /* Trick to add border inside */
+  /* 0 Hor. 0 Ver. 0 Blur scale 3px*/
+  box-shadow: inset 0 0 0 3px #fff;
+  /* with inset keyword the shadow will be added inside of the element */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+}
+@media only screen and (max-width: 34em) {
+  .btn--outline:link, .btn--outline:visited {
+    margin: 1.6rem 1.6rem 0 0;
+  }
+}
+.btn--outline:hover, .btn--outline:active {
+  background-color: #fdf2e9;
+}
+
+.section-meals {
+  padding: 9.6rem 0;
+}
+
+.meal {
+  /* box-shadow: H V Blur rgba(); */
+  box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.075);
+  border-radius: 11px;
+  overflow: hidden;
+  transition: all 0.4s;
+}
+.meal__img {
+  width: 100%;
+}
+.meal__content {
+  padding: 3.2rem 4.8rem 4.8rem 4.8rem;
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+}
+@media only screen and (max-width: 56.25em) {
+  .meal__content {
+    padding: 2.4rem 3.2rem 3.2rem 3.2rem;
+  }
+}
+.meal__tags {
+  margin-bottom: 1.2rem;
+  display: flex;
+  gap: 0.4rem;
+}
+.meal__tag {
+  display: inline-block;
+  padding: 0.4rem 0.8rem;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  color: #333;
+  border-radius: 100px;
+  font-weight: 600;
+}
+.meal__title {
+  font-size: 2.4rem;
+  color: #333;
+  font-weight: 600;
+  margin-bottom: 3.2rem;
+}
+.meal__attributes {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+}
+.meal__attribute {
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+.meal__icon {
+  font-size: 2.4rem;
+  color: #e67e22;
+}
+
+.diets {
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+}
+@media only screen and (max-width: 44em) {
+  .diets {
+    grid-column: 1/-1;
+    justify-self: center;
+  }
+}
+
+/* two cards Animation */
+.meal:hover {
+  /* transform: translate(X axis, Y axis); */
+  transform: translateY(-1.2rem);
+  box-shadow: 0 3.2rem 6.4rem rgba(0, 0, 0, 0.06);
+}
+
+.tag--vegetarian {
+  background-color: #51cf66;
+}
+
+.tag--vegan {
+  background-color: #94d82d;
+}
+
+.tag--paleo {
+  background-color: #fdd43b;
+}
+
+/* Link styles after cards */
+.all-recipes {
+  text-align: center;
+  font-size: 1.8rem;
+}
+
+.step-text-box__step-number {
+  font-size: 8.6rem;
+  font-weight: 600;
+  color: #ddd;
+  margin-bottom: 1.2rem;
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+}
+@media only screen and (max-width: 56.25em) {
+  .step-text-box__step-number {
+    font-size: 7.4rem;
+  }
+}
+.step-text-box__step-description {
+  font-size: 1.8rem;
+  line-height: 1.8;
+}
+
+.step-img-box:nth-child(2) {
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+}
+@media only screen and (max-width: 34em) {
+  .step-img-box:nth-child(2) {
+    grid-row: 1;
+  }
+}
+
+.step-img-box:nth-child(6) {
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+}
+@media only screen and (max-width: 34em) {
+  .step-img-box:nth-child(6) {
+    grid-row: 5;
+  }
+} /* Related to Circles */
+.step-img-box::before,
+.step-img-box::after {
+  content: "";
+  display: block;
+  background-color: #fdf2e9;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  /* transform: translate(X Axis, Y Axis); */
+  transform: translate(-50%, -50%);
+}
+
+/* Big Circle behind phone */
+.step-img-box::before {
+  width: 60%;
+  /* height: 60%; */
+  /* 60% of parent's width */
+  padding-bottom: 60%;
+  z-index: -2;
+}
+
+/*  Small Circle behind phone */
+.step-img-box::after {
+  width: 45%;
+  padding-bottom: 50%;
+  background-color: #fae5d3;
+  z-index: -1;
+}
+
+.step-img-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+}
+@media only screen and (max-width: 34em) {
+  .step-img-box {
+    transform: translateY(2.4rem);
+  }
+}
+.step-img-box__step-img {
+  width: 35%;
+}
+
+.section-featured {
+  padding: 4.8rem 0 3.2rem 0;
+}
+.section-featured__headin-featured-in {
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 2.4rem;
+  color: #888;
+}
+.section-featured__logos {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.section-featured img {
+  height: 3.2rem;
+  filter: brightness(0); /* To change the color of an image */
+  opacity: 50%; /* the opacity will give a the img a gray color */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+}
+@media only screen and (max-width: 56.25em) {
+  .section-featured img {
+    height: 2.4rem;
+  }
+}
+@media only screen and (max-width: 34em) {
+  .section-featured img {
+    height: 1.2rem;
+  }
+}
+
+.plan-details {
+  font-size: 1.6rem;
+  text-align: center;
+}
+
+.feature__title {
+  font-size: 2.4rem;
+  color: #333;
+  font-weight: 700;
+  margin-bottom: 1.6rem;
+}
+.feature__text {
+  font-size: 1.8rem;
+  line-height: 1.8;
+}
+.feature__icon {
+  color: #e67e22;
+  font-size: 3.2rem;
+  margin-bottom: 3.2rem;
+  background-color: #fdf2e9;
+  padding: 1.6rem;
+  border-radius: 50%;
+}
+
+.section-cta {
+  /* Top / right / bottom / left */
+  /* padding: 9.6rem 0 12.8rem 0; */
+  padding: 4.8rem 0 12.8rem;
+}
+.section-cta__cta-text-box {
+  padding: 4.8rem 6.4rem 6.4rem 6.4rem;
+  color: #45260a;
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+}
+@media only screen and (max-width: 34em) {
+  .section-cta__cta-text-box {
+    padding: 3.2rem;
+  }
+}
+.section-cta__cta-img-box {
+  background-image: linear-gradient(to right bottom, rgba(235, 151, 78, 0.35), rgba(230, 125, 34, 0.35)), url("../../img/eating.jpg");
+  background-size: cover;
+  background-position: center;
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+}
+@media only screen and (max-width: 34em) {
+  .section-cta__cta-img-box {
+    height: 32rem;
+    grid-row: 1;
+  }
+}
+
+.cta {
+  display: grid;
+  /* 2/3 = 66,6% + 1/3 = 33.3% */
+  grid-template-columns: 2fr 1fr;
+  /* background-color: $color-primary; */
+  box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.15);
+  border-radius: 11px;
+  background-image: linear-gradient(to right bottom, #eb984e, #e67e22);
+  overflow: hidden;
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+}
+@media only screen and (max-width: 56.25em) {
+  .cta {
+    /* 3/5  = 60% + 2/5 = 40%*/
+    grid-template-columns: 3fr 2fr;
+  }
+}
+@media only screen and (max-width: 34em) {
+  .cta {
+    grid-template-columns: 1fr;
+  }
+}
+.cta h2 {
+  color: inherit;
+  margin-bottom: 3.2rem;
+}
+.cta__text {
+  font-size: 1.8rem;
+  line-height: 1.8;
+  margin-bottom: 4.8rem;
+}
+
+.form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 3.2rem;
+  row-gap: 2.4rem;
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+  /* Pseudo-element to style the placeholder*/
+  /* When you move with tab button on the keyboard, Important for accessibility  */
+}
+@media only screen and (max-width: 56.25em) {
+  .form {
+    grid-template-columns: 1fr;
+  }
+}
+.form label {
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 500;
+  margin-bottom: 1.2rem;
+}
+.form input,
+.form select {
+  width: 100%;
+  padding: 1.2rem;
+  font-size: 1.8rem;
+  font-family: inherit; /* This would force the placeholder inside the input apply the styles on it */
+  color: inherit; /* Same here */
+  border: none;
+  background-color: #fdf2e9;
+  border-radius: 9px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+.form input::placeholder {
+  color: #aaa;
+}
+.form__btn {
+  border: none;
+  cursor: pointer;
+  background-color: #45260a;
+  color: #fdf2e9;
+  align-self: end;
+  padding: 1.2rem;
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+}
+@media only screen and (max-width: 56.25em) {
+  .form__btn {
+    margin-top: 1.2rem;
+  }
+}
+.form__btn:hover {
+  background-color: #fff;
+  color: #555;
+}
+.form *:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.8rem rgba(253, 242, 233, 0.5);
+}
+
+.section-hero {
+  background-color: #fdf2e9;
+  padding: 4.8rem 0 9.6rem 0;
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+}
+@media only screen and (max-width: 34em) {
+  .section-hero {
+    padding: 2.4rem 0 6.4rem 0;
+  }
+}
+.section-hero__hero {
+  max-width: 130rem;
+  margin: 0 auto;
+  padding: 0 3.2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 9.6rem;
+  align-items: center;
+  /* اكبر */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+  /* اصغر */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+}
+@media only screen and (max-width: 84rem) {
+  .section-hero__hero {
+    max-width: 120rem;
+  }
+}
+@media only screen and (max-width: 75em) {
+  .section-hero__hero {
+    gap: 4.8rem;
+  }
+}
+@media only screen and (max-width: 56.25em) {
+  .section-hero__hero {
+    grid-template-columns: 1fr;
+    padding: 0 8rem;
+    gap: 6.4rem;
+  }
+}
+@media only screen and (max-width: 34em) {
+  .section-hero__hero {
+    padding: 0 3.2rem;
+  }
+}
+.section-hero__hero-text-box, .section-hero__hero-image-box {
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+}
+@media only screen and (max-width: 56.25em) {
+  .section-hero__hero-text-box, .section-hero__hero-image-box {
+    text-align: center;
+  }
+}
+.section-hero__hero-description {
+  font-size: 2rem;
+  line-height: 1.6;
+  margin-bottom: 4.8rem;
+}
+.section-hero__hero-img {
+  width: 100%;
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+}
+@media only screen and (max-width: 56.25em) {
+  .section-hero__hero-img {
+    width: 60%;
+  }
+}
+@media only screen and (max-width: 34em) {
+  .section-hero__hero-img {
+    width: 80%;
+  }
+}
+
+.delivered__meals {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+  margin-top: 8rem;
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+}
+@media only screen and (max-width: 56.25em) {
+  .delivered__meals {
+    justify-content: center;
+    margin-top: 3.2rem;
+  }
+}
+.delivered__meals--imgs {
+  display: flex;
+}
+.delivered__meals img {
+  height: 4.8rem;
+  width: 4.8rem;
+  border-radius: 50%;
+  margin-right: -1.6rem;
+  border: 3px solid #fdf2e9;
+}
+.delivered__meals img:last-child {
+  margin: 0;
+}
+.delivered__meals--text {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+.delivered__meals span {
+  color: #cf711f;
+  font-weight: 700;
+}
+
+.section-pricing {
+  padding: 9.6rem 0;
+}
+
+.pricing-plan {
+  border-radius: 1.1rem;
+  width: 75%;
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+}
+@media only screen and (max-width: 44em) {
+  .pricing-plan {
+    width: 100%;
+  }
+}
+.pricing-plan__header {
+  text-align: center;
+  margin-bottom: 4.8rem;
+}
+.pricing-plan__plan-name {
+  color: #cf711f;
+  font-weight: 600;
+  font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.75;
+  margin-bottom: 3.2rem;
+}
+.pricing-plan__plan-price {
+  font-size: 6.2rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 1.6rem;
+}
+.pricing-plan__plan-price span {
+  font-size: 3rem;
+  font-weight: 500;
+  margin-right: 0.8rem;
+}
+.pricing-plan__plan-text {
+  font-size: 1.6rem;
+  line-height: 1.6;
+  color: #6f6f6f;
+}
+.pricing-plan__sign-up {
+  text-align: center;
+  margin-top: 4.8rem;
+}
+
+.starter {
+  justify-self: end;
+  border: 2px solid #fdf2e9;
+  padding: 4.6rem;
+}
+
+.complete {
+  background-color: #fdf2e9;
+  padding: 4.8rem;
+  position: relative;
+  overflow: hidden; /* to hide the rest of the Ribbon which is overflowing */
+}
+
+/* The Yellow #fdd43b Ribbon on the Complete price card */
+.complete::after {
+  content: "Best value";
+  position: absolute;
+  top: 6%;
+  right: -20%;
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #333;
+  background-color: #fdd43b;
+  padding: 0.8rem 8rem;
+  transform: rotate(50deg);
+}
+
+.section-testimonials {
+  background-color: #fdf2e9;
+  display: grid;
+  grid-template-columns: 55fr 45fr;
+  align-items: center;
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+}
+@media only screen and (max-width: 56.25em) {
+  .section-testimonials {
+    grid-template-columns: 1fr;
+  }
+}
+.section-testimonials__container {
+  padding: 9.6rem;
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+}
+@media only screen and (max-width: 75em) {
+  .section-testimonials__container {
+    padding: 9.6rem 3.2rem;
+  }
+}
+.section-testimonials__testimonials {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 4.8rem;
+  column-gap: 8rem;
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+}
+@media only screen and (max-width: 34em) {
+  .section-testimonials__testimonials {
+    grid-template-columns: 1fr;
+  }
+}
+.section-testimonials__image {
+  width: 6.4rem;
+  border-radius: 50%;
+  margin-bottom: 1.2rem;
+}
+.section-testimonials__text {
+  font-size: 1.8rem;
+  line-height: 1.8;
+  margin-bottom: 1.6rem;
+}
+.section-testimonials__name {
+  font-size: 1.6rem;
+  color: #777;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.6rem;
+  padding: 1.6rem;
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+  /* Note: this BP is only for this app, don't take in count 
+  in future Apps */
+}
+@media only screen and (max-width: 84rem) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media only screen and (max-width: 56.25em) {
+  .gallery {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+@media only screen and (max-width: 34em) {
+  .gallery {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.2rem;
+  }
+}
+.gallery__item {
+  overflow: hidden;
+}
+.gallery img {
+  display: block;
+  width: 100%;
+  transition: all 0.4s;
+}
+.gallery img:hover {
+  transform: scale(1.1);
+}
+
+/* 
+––– 01 Typography System
+
+  FONT SIZE SYSTEM (px)
+  10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
+  Fonts-weight:
+  Default 400
+  Medium: 500
+  Semi-bold: 600
+  Bold: 700
+
+  Line heights:
+  Default: 1
+  Small: 1.05
+  Medium: 1.2
+  paragraph default: 1.06
+  Large: 1.8
+
+
+  –– Letter spacing
+  ––0.5px
+  –– 0,75px
+
+
+  ––– 02 colors
+
+  –– Primary: #e67e22
+  –– Tints: #fdf2e9
+  –– Tints 1 : #fae5d3
+  –– Tints 2 : #eb984e
+  –– Shades:
+      #cf711f
+      #45260a
+  –– Accents:
+
+  –– Greys:
+  ––#888
+  –– #555
+  –– #333
+  ––#767676  ( lightest grey allowed on #fff
+  –– #6f6f6f (lightest grey allowed on this #fdf2e9)
+
+  ––– 03 shadows
+
+  box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.15);
+
+  ––– 04 Border-Radius
+
+  Default 9px
+  Medium: 11px
+
+  ––– 05 White space
+
+  ––– 06 Spacing System (px)
+  2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+
+*/
+
+/*# sourceMappingURL=main.css.map */

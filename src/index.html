@@ -100,11 +100,22 @@
             </div>
           </div>
           <div class="section-hero__hero-image-box">
-            <img
-              src="img/hero.png"
-              alt="woman enjoy food, meals in storage container, and food bowls on a table"
-              class="section-hero__hero-img"
-            />
+            <!-- with this Picture/Source html element trick,
+            it is for those browsers who can't support
+            some type of extension images, like safari can't 
+            display the webp ext. then it will select 
+            the png ext. to display  -->
+            <picture>
+              <source srcset="img/hero.webp" type="image/webp" />
+              <source srcset="img/hero-min.png" type="image/png" />
+
+              <img
+                src="img/hero-min.png"
+                alt="woman enjoy food, meals in
+              storage container, and food bowls on a table"
+                class="section-hero__hero-img"
+              />
+            </picture>
           </div>
         </div>
       </section>
